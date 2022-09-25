@@ -1,0 +1,33 @@
+function celcius(){
+    var values = document.getElementById('value').value;
+    let result1 = (parseFloat(values)-32) * 5/9;
+    document.getElementById("Result").value =parseFloat(result1).toFixed(2);
+}
+function farenheit(){
+    let value1 = document.getElementById('value').value;
+    let result2 = parseFloat(value1) * (1.8) +32;
+    document.getElementById("Result").value =parseFloat(result2).toFixed(2);
+}
+function Selectparameter(){
+   let selectElement = document.queryCommandValue('#select');
+   let output = selectElement.options[selectElement.selectIndex].text;
+   console.log(output);
+   
+   if(output == '2') {
+    celcius();
+    console.log("clicus print");
+   }
+   else if(output == '3' )
+   {
+    farenheit();
+    console.log("Farenheit print");
+   }else{
+    alert("Select parameter");
+   }
+  
+}
+function Reset(){
+    document.getElementById('value').value ='';
+    document.getElementById('Result').value ='';
+    document.getElementById('select').value ='' ;
+}
